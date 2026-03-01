@@ -15,7 +15,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.vectorstores import FAISS
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # PDF
 from pypdf import PdfReader
@@ -401,3 +401,4 @@ if st.session_state.requisitos_texto:
 with st.expander("Histórico de Mensagens"):
     for role, text in st.session_state.historico:
         st.chat_message("user" if role == "user" else "assistant").write(text)
+
